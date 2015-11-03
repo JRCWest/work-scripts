@@ -4,7 +4,14 @@
 #	...hopefully.
 
 import os
-import pprint
+import pprint 
+import notify
+
+def sms(pnumber,msg):
+    sysmsg = 'curl http://textbelt.com/text -d number=' + str(pnumber) + ' -d ' + '\"message=' + str(msg) + '\"'
+    os.system(sysmsg)
+    print("Message: " + msg + " sent to phone number: " + str(pnumber))
+
 
 #	Char dictionary
 charCount = {}
@@ -31,3 +38,5 @@ for char in fileContent:
 
 #	For 'pretty printing'
 pprint.pprint(charCount)
+
+notify.notify()

@@ -1,6 +1,11 @@
 @echo off
 
-set /p class="Class # >> "
+set class=%1
+
+if [%1]==[] (
+  echo. && echo You gotta enter a class number, doofus.
+  set /p class="Class Number? >>"
+  )
 
 for /F %%A IN (C:\Scripts\Classes\%class%.txt) DO (
 
