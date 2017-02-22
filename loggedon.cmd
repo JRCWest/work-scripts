@@ -13,7 +13,7 @@ if [%1]==[] (
 for /F %%A IN (C:\Scripts\Classes\%class%.txt) DO (
 echo %%A
 
-psloggedon 2>nul -l \\%%A | findstr /v "BRYANRES"
+psloggedon 2>nul -l \\%%A 
 
 echo.
 )
